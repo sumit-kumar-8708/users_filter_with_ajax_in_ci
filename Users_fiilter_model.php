@@ -33,6 +33,13 @@ class Team_connect_model extends CI_Model
                 if ($user_filters['status']) {
                     $this->db->where('users_product_map.status', ($user_filters['status'] - 1 ));
                 }
+		if ($user_filters['start_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") >=', date('Y-m-d', strtotime($customSearch['start_date'])));
+		}
+
+		if ($user_filters['end_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") <=', date('Y-m-d', strtotime($customSearch['end_date'])));
+		}
             }
         // 1st place:
 
@@ -60,6 +67,13 @@ class Team_connect_model extends CI_Model
                 if ($user_filters['status']) {
                     $this->db->where('users_product_map.status', ($user_filters['status'] - 1));
                 }
+		if ($user_filters['start_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") >=', date('Y-m-d', strtotime($customSearch['start_date'])));
+		}
+
+		if ($user_filters['end_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") <=', date('Y-m-d', strtotime($customSearch['end_date'])));
+		}
             }
         // 2nd place:
 
@@ -96,6 +110,13 @@ class Team_connect_model extends CI_Model
                 if ($user_filters['status']) {
                     $this->db->where('users_product_map.status', ($user_filters['status'] - 1));
                 }
+		if ($user_filters['start_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") >=', date('Y-m-d', strtotime($customSearch['start_date'])));
+		}
+
+		if ($user_filters['end_date']) {
+			$this->db->where('DATE_FORMAT(schedule.start_date_time, "%Y-%m-%d") <=', date('Y-m-d', strtotime($customSearch['end_date'])));
+		}
             }
         // 3rd place:
 
